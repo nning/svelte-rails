@@ -1,3 +1,5 @@
+require 'rails/railtie'
+
 module Svelte::Rails
   class Railtie < ::Rails::Railtie
     initializer 'react_rails.setup_view_helpers', after: :load_config_initializers, group: :all do |app|

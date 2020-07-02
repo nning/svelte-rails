@@ -1,4 +1,5 @@
 require 'execjs'
+require 'action_view'
 
 module Svelte
   class Renderer

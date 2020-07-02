@@ -16,6 +16,8 @@ Gem::Specification.new do |spec|
   spec.metadata['source_code_uri'] = spec.homepage
   spec.metadata['changelog_uri'] = spec.homepage + '/blob/master/CHANGELOG.md'
 
+  spec.add_development_dependency 'rails', '>= 5.2'
+
   # spec.add_dependency 'connection_pool'
   spec.add_dependency 'execjs'
   spec.add_dependency 'railties', '>= 5.2'
