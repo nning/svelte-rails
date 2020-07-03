@@ -33,13 +33,12 @@ https://github.com/nning/svelte-rails-demo/commits/master
 
 ## Missing Features
 
-* Better documentation for setup
 * Turbolinks integration
-* Rails generator for initial setup (the previously mentioned line does not work, yet)
 * HMR and Bundle consistency (server-rendered HTML is cached and client-side updates on changes to the sources)
 * Render components directly from controllers
 * Generator for components
 * Render pools
+* Better documentation for setup
 
 ## Contributing
 
