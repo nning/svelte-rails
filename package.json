@@ -2,21 +2,28 @@
   "name": "svelte_ujs",
   "version": "0.1.0",
   "description": "Rails UJS for the svelte-rails gem",
-  "main": "svelte_ujs/index.js",
-  "directories": {
-    "lib": "lib"
+  "license": "MIT",
+  "author": "henning mueller <mail@nning.io>",
+  "bugs": {
+    "url": "https://github.com/nning/svelte-rails/issues"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "homepage": "https://github.com/nning/svelte-rails#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nning/svelte-rails.git"
   },
-  "author": "henning mueller <mail@nning.io>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/nning/svelte-rails/issues"
+
+  "main": "svelte_ujs/index.js",
+  "exports": {
+    "./": "./svelte_ujs/"
   },
-  "homepage": "https://github.com/nning/svelte-rails#readme"
+
+  "devDependencies": {
+    "@rails/webpacker": "4.2.2",
+    "webpack-assets-manifest": "^3.1.1",
+    "before-build-webpack": "^0.2.9"
+  },
+  "resolutions": {
+    "webpack-assets-manifest": "https://github.com/pustovalov/webpack-assets-manifest#build"
+  }
 }
