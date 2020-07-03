@@ -7,5 +7,9 @@ module Svelte::Rails
         include ::Svelte::Rails::ViewHelper
       end
     end
+
+    rake_tasks do
+      load 'svelte/rails/install_task.rake'
+    end
   end
 end

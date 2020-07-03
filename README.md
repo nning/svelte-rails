@@ -12,21 +12,23 @@ Make sure, you have [set-up Webpacker](https://github.com/rails/webpacker#instal
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'svelte-rails'
+gem 'svelte-rails', path: '../svelte-rails'
 ```
 
 And then execute:
 
-    $ bundle install
-    $ rails generate svelte:install
+    $ bundle
+    $ rails svelte:install
 
-An example Rails app with svelte-rails can be seen here:  
-https://github.com/nning/rails-svelte-poc
+If you have started with a fresh Rails app, you can overwrite conflicting files.
+
+An example Rails app demonstrating the integration of svelte-rails can be found here:  
+https://github.com/nning/svelte-rails-demo/commits/master
 
 ## View Helper
 
 ```erb
-<%= svelte_component(:Hello, name: 'Svelte') %>
+<%= svelte_component :Hello, name: 'Svelte' %>
 ```
 
 ## Missing Features

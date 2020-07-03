@@ -2,8 +2,7 @@ require 'svelte/rails/version'
 
 module Svelte
   module Rails
-    class Error < StandardError; end
-    # Your code goes here...
+    # class Error < StandardError; end
   end
 end
 
