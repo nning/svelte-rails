@@ -10,13 +10,15 @@ class SvelteRailsUJS {
   static start() {
     SvelteRailsUJS.mountComponents()
 
-    document.addEventListener('DOMContentLoaded', () => {
-      SvelteRailsUJS.mountComponents()
-    })
+    document.addEventListener('DOMContentLoaded',
+      SvelteRailsUJS.mountComponents)
+
+    document.addEventListener('turbolinks:load',
+      SvelteRailsUJS.mountComponents)
   }
 
   static mountComponents() {
-    document.querySelectorAll('[data-svelte-class]')
+    document.querySelectorAll('[data-svelte-class]:not([data-svelte-initialized])')
       .forEach(SvelteRailsUJS.mountComponent)
   }
 
@@ -36,6 +38,8 @@ class SvelteRailsUJS {
     console.debug(Component, {target, props, hydrate});
 
     const component = new Component({target, props, hydrate})
+
+    target.dataset.svelteInitialized = true
   }
 }
 

@@ -33,7 +33,6 @@ https://github.com/nning/svelte-rails-demo/commits/master
 
 ## Missing Features
 
-* Turbolinks integration
 * HMR and Bundle consistency (server-rendered HTML is cached and client-side updates on changes to the sources)
 * Render components directly from controllers
 * Generator for components
