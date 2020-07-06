@@ -31,10 +31,22 @@ https://github.com/nning/svelte-rails-demo/commits/master
 <%= svelte_component :Hello, name: 'Svelte' %>
 ```
 
+## Controller Renderer
+
+```ruby
+class TodoController < ApplicationController
+  def index
+    @todos = Todo.all
+    render component: 'TodoList', props: { todos: @todos }
+  end
+end
+```
+
+`prerender` is activated by default, can be disabled with `prerender: false`.
+
 ## Missing Features
 
 * HMR and Bundle consistency (server-rendered HTML is cached and client-side updates on changes to the sources)
-* Render components directly from controllers
 * Generator for components
 * Render pools
 * Better documentation for setup

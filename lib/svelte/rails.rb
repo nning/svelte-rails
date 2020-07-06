@@ -7,4 +7,6 @@ module Svelte
 end
 
 require 'svelte/rails/view_helper'
+require 'svelte/rails/controller_renderer'
+
 require 'svelte/rails/railtie' if defined?(Rails)
