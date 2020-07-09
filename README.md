@@ -12,7 +12,7 @@ Make sure, you have [set-up Webpacker](https://github.com/rails/webpacker#instal
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'svelte-rails', path: '../svelte-rails'
+gem 'svelte-rails'
 ```
 
 And then execute:
