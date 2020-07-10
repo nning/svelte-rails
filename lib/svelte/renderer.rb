@@ -13,6 +13,11 @@ module Svelte
 
     def render(name, props = {}, options = {}, &block)
       prerender_options = options[:prerender]
+
+      if prerender_options.nil?
+        prerender_options = ::Rails.application.config.svelte.prerender_default
+      end
+
       if prerender_options
         block = Proc.new { concat(prerender_component(name, props, prerender_options)) }
       end

@@ -33,6 +33,7 @@ https://github.com/nning/svelte-rails-demo/commits/master
 
 ```erb
 <%= svelte_component :Hello, name: 'Svelte' %>
+<%= svelte_component :Hello, {name: 'Svelte'}, {prerender: true} %>
 ```
 
 ## Controller Renderer
@@ -54,6 +55,13 @@ end
 * Generator for components
 * Render pools
 * Better documentation for setup
+
+## Configuration Options
+
+Configuration can be changed in `config/application.rb`, for example.
+
+    # Prerender (SSR) by default (i.e. without passing `prerender:true` to the view helper)
+    config.svelte.prerender_default = false
 
 ## Contributing
 

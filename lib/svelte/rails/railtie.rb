@@ -2,6 +2,11 @@ require 'rails/railtie'
 
 module Svelte::Rails
   class Railtie < ::Rails::Railtie
+    config.svelte = ActiveSupport::OrderedOptions.new
+
+    # Prerender (SSR) by default (i.e. without passing `prerender:true` to the view helper)
+    config.svelte.predender_default = false
+
     initializer 'svelte_rails.setup_view_helpers', after: :load_config_initializers, group: :all do |app|
       ActiveSupport.on_load(:action_view) do
         include ::Svelte::Rails::ViewHelper
