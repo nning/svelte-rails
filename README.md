@@ -9,6 +9,10 @@ Svelte-Rails integrates [Svelte](https://svelte.dev/) with Ruby on Rails. It has
 
 Make sure, you have [set-up Webpacker](https://github.com/rails/webpacker#installation) and it's [Svelte integration](https://github.com/rails/webpacker/blob/master/docs/integrations.md#svelte).
 
+For a quick start with a new app, simply run:
+
+    rails new demo --webpack=svelte
+
 Add this line to your application's Gemfile:
 
 ```ruby
@@ -20,7 +24,7 @@ And then execute:
     $ bundle
     $ rails svelte:install
 
-If you have started with a fresh Rails app, you can overwrite conflicting files.
+You can overwrite conflicting files if you have started with a fresh Rails app or did not change the webpack config of your existing one.
 
 An example Rails app demonstrating the integration of svelte-rails can be found here:  
 https://github.com/nning/svelte-rails-demo/commits/master
