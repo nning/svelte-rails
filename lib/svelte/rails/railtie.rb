@@ -8,12 +8,16 @@ module Svelte::Rails
       end
     end
 
-    initializer 'svelte_rails.add_component_renderer', group: :all do |app|
-      ActionController::Renderers.add :component do |component_name, options|
+    initializer 'svelte_rails.add_component_renderers', group: :all do |app|
+      render_component = lambda do |component_name, options|
         renderer = ::Svelte::Rails::ControllerRenderer.new
         html = renderer.call(component_name, options)
         render_options = options.merge(inline: html)
         render(render_options)
+      end
+
+      %i[component svelte svelte_component].each do |renderer_name|
+        ActionController::Renderers.add renderer_name, &render_component
       end
     end
 
