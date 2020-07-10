@@ -1,6 +1,6 @@
 const config = require('@rails/webpacker/package/config')
 const ConfigList = require('@rails/webpacker/package/config_types/config_list')
-const WaitPlugin = require('svelte_ujs/WaitPlugin')
+const WaitPlugin = require('./WaitPlugin')
 
 // Use version of WebpackAssetsManifest that supports merging entrypoints in manifest.json
 // https://github.com/webdeveric/webpack-assets-manifest/pull/59
