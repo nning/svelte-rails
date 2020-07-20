@@ -12,16 +12,14 @@
     "type": "git",
     "url": "git+https://github.com/nning/svelte-rails.git"
   },
-
   "main": "svelte_ujs/index.js",
   "exports": {
     "./": "./svelte_ujs/"
   },
-
   "devDependencies": {
     "@rails/webpacker": "4.2.2",
-    "webpack-assets-manifest": "^3.1.1",
-    "before-build-webpack": "^0.2.9"
+    "before-build-webpack": "^0.2.9",
+    "webpack-assets-manifest": "https://github.com/pustovalov/webpack-assets-manifest#build"
   },
   "resolutions": {
     "webpack-assets-manifest": "https://github.com/pustovalov/webpack-assets-manifest#build"
