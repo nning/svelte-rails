@@ -29,6 +29,7 @@ EOF
 # kill `cat tmp/pids/server.pid`
 
 rails db:migrate
+rails assets:precompile
 
 cat <<EOF > test/system/features_test.rb
 require 'application_system_test_case'
