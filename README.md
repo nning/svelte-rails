@@ -1,5 +1,9 @@
 # Svelte-Rails
 
+[![Gem](https://img.shields.io/gem/v/svelte-rails.svg?style=flat-square)](https://rubygems.org/gems/svelte-rails)
+[![npm](https://img.shields.io/npm/v/svelte_ujs_ng.svg?style=flat-square)](https://www.npmjs.com/package/svelte_ujs_ng)
+![Build Status](https://img.shields.io/github/workflow/status/nning/svelte-rails/Test%20new%20Rails%20app)
+
 Svelte-Rails integrates [Svelte](https://svelte.dev/) with Ruby on Rails. It has the following features:
 
 * Automatically renders Svelte server-side and client-side
