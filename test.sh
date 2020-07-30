@@ -1,18 +1,19 @@
 #!/bin/sh
 
-set -e
+set -xe
+export DISABLE_SPRING=true
 
-nvm use --delete-prefix v14.5.0
+# nvm use --delete-prefix v14.5.0
 
 rails new svelte-rails-test --webpack=svelte
 cd svelte-rails-test
 
-echo "gem 'svelte-rails', path: '../svelte-rails'" >> Gemfile
+echo "gem 'svelte-rails', path: '..'" >> Gemfile
 bundle
 
 yes | rails svelte:install
 
-sed -i 's/svelte_ujs_ng.*$/svelte_ujs_ng": "..\/svelte-rails",/g' package.json
+sed -i 's/svelte_ujs_ng.*$/svelte_ujs_ng": "..",/g' package.json
 yarn
 
 # TODO This does not work in shell context, yet
@@ -26,4 +27,4 @@ rails s -d
 
 xdg-open http://localhost:3000/greetings/show
 
-kill `cat tmp/pids/server.pid`
+# kill `cat tmp/pids/server.pid`
