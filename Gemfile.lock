@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    svelte-rails (0.3.2)
+    svelte-rails (0.3.3)
       execjs
       railties (>= 5.2)
 

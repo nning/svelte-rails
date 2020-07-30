@@ -1,6 +1,6 @@
 {
   "name": "svelte_ujs_ng",
-  "version": "0.3.1",
+  "version": "0.3.3",
   "description": "Rails UJS for turbolinks and SSR of the svelte-rails gem",
   "license": "MIT",
   "author": "henning mueller <mail@nning.io>",
