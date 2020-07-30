@@ -5,7 +5,7 @@ const WebpackBeforeBuildPlugin = require('before-build-webpack')
 
 // https://www.viget.com/articles/run-multiple-webpack-configs-sequentially/
 class WaitPlugin extends WebpackBeforeBuildPlugin {
-  constructor(file, interval = 200, timeout = 10000) {
+  constructor(file, interval = 200, timeout = 30000) {
     const filePath = path.join(config.outputPath, file)
 
     try {

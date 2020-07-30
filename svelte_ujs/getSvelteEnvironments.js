@@ -6,13 +6,13 @@ const WaitPlugin = require('./WaitPlugin')
 // https://github.com/webdeveric/webpack-assets-manifest/pull/59
 const WebpackAssetsManifest = require('webpack-assets-manifest')
 
-const env = process.env.NODE_ENV
+const env = process.env.RAILS_ENV
 const Environment = require('@rails/webpacker/package/environments/' + env)
 
 function getSvelteEnvironments(clientLoader, serverLoader) {
   const clientEnvironment = new Environment()
   clientEnvironment.entry.delete('server_rendering')
-  clientEnvironment.loaders.prepend('svelte', clientLoader)
+  clientEnvironment.loaders.insert('svelte', clientLoader, {before: 'babel'})
 
   // We need to set merge:true for generating the manifest.json
   clientEnvironment.plugins.delete('Manifest')

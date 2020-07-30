@@ -38,7 +38,7 @@ module Svelte
     end
 
     def install_svelte_ujs
-      `yarn add svelte_ujs_ng`
+      `yarn add svelte_ujs_ng svelte-preprocess`
     end
 
     private
