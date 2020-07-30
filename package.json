@@ -16,7 +16,7 @@
   "exports": {
     "./": "./svelte_ujs/"
   },
-  "devDependencies": {
+  "dependencies": {
     "@rails/webpacker": "4.2.2",
     "before-build-webpack": "^0.2.9",
     "webpack-assets-manifest": "https://github.com/pustovalov/webpack-assets-manifest#build"
