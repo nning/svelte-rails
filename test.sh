@@ -5,10 +5,13 @@ export DISABLE_SPRING=true
 
 # nvm use --delete-prefix v14.5.0
 
+rm -rf svelte-rails-test
+
 rails new svelte-rails-test --webpack=svelte
 cd svelte-rails-test
 
 echo "gem 'svelte-rails', path: '..'" >> Gemfile
+echo "gem 'rexml'" >> Gemfile
 bundle
 
 yes | rails svelte:install
