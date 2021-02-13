@@ -16,7 +16,7 @@ bundle
 
 yes | rails svelte:install
 
-sed -i 's/svelte_ujs_ng.*$/svelte_ujs_ng": "..",/g' package.json
+sed -i 's/svelte_ujs_ng.*$/svelte_ujs_ng": ".\/..",/g' package.json
 yarn
 
 # TODO This does not work in shell context, yet
@@ -30,6 +30,8 @@ EOF
 # xdg-open http://localhost:3000/greetings/show
 
 # kill `cat tmp/pids/server.pid`
+
+export RAILS_ENV=test
 
 rails db:migrate
 rails assets:precompile

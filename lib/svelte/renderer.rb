@@ -43,14 +43,14 @@ module Svelte
         var global = global || this;
         var self = self || this;
 
-        #{find_asset('server_rendering.js')}
+        #{read_asset('server_rendering.js')}
       JS
 
       # File.write(::Rails.root.join('debug.js'), initial_code)
       @context = ExecJS.compile(initial_code)
 
       js_code = <<-JS
-        (function(){
+        (function() {
           return SvelteRailsUJS.serverRender('#{component_name}', #{props.to_json});
         })()
       JS
@@ -58,7 +58,7 @@ module Svelte
       @context.eval(js_code).html_safe
     end
 
-    def find_asset(logical_path)
+    def read_asset(logical_path)
       if Webpacker.dev_server.running?
         ds = Webpacker.dev_server
 
@@ -72,7 +72,14 @@ module Svelte
         dev_server_asset.sub!(CLIENT_REQUIRE, '//\0')
         dev_server_asset
       else
-        File.read(::Rails.root.join('public', Webpacker.manifest.lookup(logical_path)[1..-1]))
+        asset = Webpacker.manifest.lookup(logical_path)
+        p asset
+
+        if !asset
+          raise StandardError.new("'#{logical_path}'' not found! Did you precompile assets for correct environment?")
+        end
+
+        File.read(::Rails.root.join('public', asset[1..-1]))
       end
     end
   end
