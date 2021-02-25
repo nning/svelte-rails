@@ -31,7 +31,7 @@ And then execute:
 You can overwrite conflicting files if you have started with a fresh Rails app or did not change the webpack config of your existing one.
 
 An example Rails app demonstrating the integration of svelte-rails can be found here:  
-https://github.com/nning/svelte-rails-demo/commits/master
+https://github.com/nning/svelte-rails-demo
 
 ## View Helper
 
